@@ -25,4 +25,8 @@ Cinema.prototype.checkByYear = function(year) {
 Cinema.prototype.longerLengthThan = function(length) {
   return this.films.some( film => film.length > length);
 }
+
+Cinema.prototype.totalLength = function() {
+  return this.films.reduce((total, film) => total + film.length, 0);
+}
 module.exports = Cinema;
