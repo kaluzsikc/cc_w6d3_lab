@@ -58,6 +58,10 @@ describe('Cinema', function () {
     const actual = cinema.totalLength();
     assert.strictEqual(actual, 622);
   });
+  it('Cinema should be able to filter films by year', function () {
+    const actual = cinema.filterByProperty('year', 2016);
+    assert.strictEqual(actual, moonlight);
+  })
 
 });
 
