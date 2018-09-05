@@ -20,13 +20,17 @@ Cinema.prototype.filterByYear = function(year) {
 
 Cinema.prototype.checkByYear = function(year) {
   return this.films.some( film => film.year === year);
-}
+};
 
 Cinema.prototype.longerLengthThan = function(length) {
   return this.films.some( film => film.length > length);
-}
+};
 
 Cinema.prototype.totalLength = function() {
   return this.films.reduce((total, film) => total + film.length, 0);
-}
+};
+
+Cinema.prototype.filterByProperty = function(property, value) {
+  return this.films.filter(film => film[property] === value)
+};
 module.exports = Cinema;
